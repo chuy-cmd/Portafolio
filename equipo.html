@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo - Los CMMP</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .team-header {
+            background: var(--gradient);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s;
+            height: 100%;
+        }
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin: -100px auto 0;
+            display: block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+        }
+        .profile-header {
+            background: var(--gradient);
+            height: 150px;
+            position: relative;
+        }
+        .profile-body {
+            padding: 2rem;
+            text-align: center;
+        }
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .profile-role {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .profile-description {
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .skill-badge {
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+            color: white;
+        }
+        .stats-box {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 0.5rem;
+        }
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-code me-2"></i>
+                <span class="fw-bold">Portafolio CMMP</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="unidad1.html">
+                            <i class="fas fa-book me-1"></i>Unidad 1
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="unidad2.html">
+                            <i class="fas fa-plug me-1"></i>Unidad 2
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="unidad3.html">
+                            <i class="fas fa-cogs me-1"></i>Unidad 3
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle profile-link active" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-users-cog"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="equipo.html">
+                                <i class="fas fa-users me-2"></i>Conoce al Equipo
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Team Header -->
+    <section class="team-header">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">
+                <i class="fas fa-users me-3"></i>Nuestro Equipo
+            </h1>
+            <p class="lead">Los CMMP - Desarrolladores de Software Multiplataforma</p>
+        </div>
+    </section>
+
+    <!-- Team Members -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <!-- Profile 1: Harold Gamaliel Constante Cruz -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="profile-card">
+                        <div class="profile-header"></div>
+                        <div class="profile-image">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="profile-body">
+                            <h2 class="profile-name">Harold Gamaliel Constante Cruz</h2>
+                            <p class="profile-role">
+                                <i class="fas fa-graduation-cap me-2"></i>Desarrollador Full Stack
+                            </p>
+                            
+                            <div class="stats-box">
+                                <div class="row g-0">
+                                    <div class="col-4 stat-item">
+                                        <div class="stat-number">10+</div>
+                                        <div class="stat-label">Proyectos</div>
+                                    </div>
+                                    <div class="col-4 stat-item">
+                                        <div class="stat-number">2</div>
+                                        <div class="stat-label">Años</div>
+                                    </div>
+                                    <div class="col-4 stat-item">
+                                        <div class="stat-number">6+</div>
+                                        <div class="stat-label">Tecnologías</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="profile-description">
+                                Estudiante apasionado por el desarrollo de software con enfoque en aplicaciones web modernas. Especializado en arquitecturas orientadas a servicios y desarrollo de APIs RESTful. Me encanta resolver problemas complejos mediante soluciones tecnológicas innovadoras.
+                            </p>
+
+                            <div class="skills-list">
+                                <span class="skill-badge">JavaScript</span>
+                                <span class="skill-badge">Python</span>
+                                <span class="skill-badge">Node.js</span>
+                                <span class="skill-badge">PHP</span>
+                                <span class="skill-badge">SQL</span>
+                                <span class="skill-badge">HTML</span>
+                            </div>
+
+                            <div class="social-links">
+                                <a href="#" class="social-link" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="social-link" title="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-link" title="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="#" class="social-link" title="Portfolio">
+                                    <i class="fas fa-globe"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile 2: Jesús Adán Álvarez Ramírez -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="profile-card">
+                        <div class="profile-header"></div>
+                        <div class="profile-image">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="profile-body">
+                            <h2 class="profile-name">Jesús Adán Álvarez Ramírez</h2>
+                            <p class="profile-role">
+                                <i class="fas fa-code me-2"></i>Desarrollador full stack
+                            </p>
+                            
+                            <div class="stats-box">
+                                <div class="row g-0">
+                                    <div class="col-4 stat-item">
+                                        <div class="stat-number">10+</div>
+                                        <div class="stat-label">Proyectos</div>
+                                    </div>
+                                    <div class="col-4 stat-item">
+                                        <div class="stat-number">2</div>
+                                        <div class="stat-label">Años</div>
+                                    </div>
+                                    <div class="col-4 stat-item">
+                                        <div class="stat-number">6+</div>
+                                        <div class="stat-label">Tecnologías</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="profile-description">
+                                Estudiante apasionado por el desarrollo de software con enfoque en aplicaciones web modernas. Especializado en arquitecturas orientadas a servicios y desarrollo de APIs RESTful. Me encanta resolver problemas complejos mediante soluciones tecnológicas innovadoras.
+                            </p>
+
+                            <div class="skills-list">
+                                <span class="skill-badge">JavaScript</span>
+                                <span class="skill-badge">Python</span>
+                                <span class="skill-badge">Node.js</span>
+                                <span class="skill-badge">PHP</span>
+                                <span class="skill-badge">SQL</span>
+                                <span class="skill-badge">HTML</span>
+                            </div>
+
+                            <div class="social-links">
+                                <a href="#" class="social-link" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="social-link" title="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-link" title="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="#" class="social-link" title="Portfolio">
+                                    <i class="fas fa-globe"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Info -->
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-body p-5 text-center">
+                            <i class="fas fa-quote-left text-primary fa-3x mb-4"></i>
+                            <blockquote class="blockquote mb-4">
+                                <p class="lead">"La colaboración y el aprendizaje continuo son la base de nuestro éxito en el desarrollo de software orientado a servicios."</p>
+                            </blockquote>
+                            <h4 class="fw-bold mb-3">Acerca del Equipo Los CMMP</h4>
+                            <p class="text-muted">
+                                Somos un equipo de estudiantes de Desarrollo de Software Multiplataforma comprometidos con la excelencia académica y profesional. Nuestro enfoque está en dominar las tecnologías modernas de desarrollo web, especialmente en arquitecturas orientadas a servicios y APIs, para construir soluciones innovadoras que resuelvan problemas reales.
+                            </p>
+                            <div class="mt-4">
+                                <a href="index.html" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-home me-2"></i>Volver al Portafolio
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-code me-2"></i>Los CMMP
+                    </h5>
+                    <p class="small">Equipo dedicado al desarrollo de aplicaciones web orientadas a servicios.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Información Académica</h5>
+                    <ul class="list-unstyled small">
+                        <li><i class="fas fa-university me-2"></i>Universidad Tecnológica</li>
+                        <li><i class="fas fa-book me-2"></i>App Web Orientada a Servicios</li>
+                        <li><i class="fas fa-users me-2"></i>DSMA</li>
+                        <li><i class="fas fa-calendar me-2"></i>2025</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Enlaces</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="footer-link"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="equipo.html" class="footer-link"><i class="fas fa-users fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center small">
+                <p class="mb-0">&copy; 2025 Los CMMP - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

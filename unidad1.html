@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 1 - Portafolio CMMP</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content-section {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        }
+        .content-section h2 {
+            color: var(--primary);
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .content-section h3 {
+            color: var(--secondary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .content-section h4 {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+        }
+        .saber-header {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px 15px 0 0;
+            margin-bottom: 0;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .service-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .service-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        .service-list li::before {
+            content: "\f0da";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        .principle-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+        }
+        .principle-card:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+        .standard-badge {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-code me-2"></i>
+                <span class="fw-bold">Portafolio CMMP</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="unidad1.html">
+                            <i class="fas fa-book me-1"></i>Unidad 1
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="unidad2.html">
+                            <i class="fas fa-plug me-1"></i>Unidad 2
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="unidad3.html">
+                            <i class="fas fa-cogs me-1"></i>Unidad 3
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle profile-link" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-users-cog"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="equipo.html">
+                                <i class="fas fa-users me-2"></i>Conoce al Equipo
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12">
+                <a href="index.html" class="btn btn-outline-primary mb-4">
+                    <i class="fas fa-arrow-left me-2"></i>Volver al Inicio
+                </a>
+
+                <!-- Header -->
+                <div class="saber-header">
+                    <h1 class="mb-0"><i class="fas fa-book-open me-3"></i>Unidad 1: Introducción al Desarrollo Web Orientado a Servicios</h1>
+                </div>
+
+                <!-- Sección: Paradigma -->
+                <div class="content-section">
+                    <h2><i class="fas fa-lightbulb me-2"></i>1. Paradigma del Desarrollo de Aplicaciones Orientadas a Servicios</h2>
+                    <p class="lead">El paradigma del desarrollo de aplicaciones orientadas a servicios se basa en la idea de construir sistemas de software a partir de <strong>servicios independientes</strong>, reutilizables y comunicados a través de la red.</p>
+                    
+                    <div class="highlight-box">
+                        <p class="mb-0">Este paradigma surge como respuesta a la necesidad de crear aplicaciones más <strong>flexibles, escalables y fáciles de mantener</strong>, especialmente en entornos distribuidos como Internet y la computación en la nube.</p>
+                    </div>
+
+                    <h3><i class="fas fa-cloud me-2"></i>1.1 Servicios en la Nube</h3>
+                    <p>La computación en la nube proporciona diferentes tipos de servicios:</p>
+                    <ul class="service-list">
+                        <li><strong>IaaS (Infraestructura como Servicio):</strong> Proporciona recursos básicos como servidores virtuales, almacenamiento y redes.</li>
+                        <li><strong>PaaS (Plataforma como Servicio):</strong> Ofrece un entorno completo para desarrollar y ejecutar aplicaciones.</li>
+                        <li><strong>SaaS (Software como Servicio):</strong> Permite utilizar aplicaciones directamente desde la nube.</li>
+                        <li><strong>BaaS (Backend como Servicio):</strong> Brinda funcionalidades como autenticación, bases de datos y notificaciones.</li>
+                    </ul>
+
+                    <h3><i class="fas fa-cogs me-2"></i>1.2 Características de las Aplicaciones Orientadas a Servicios</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="principle-card">
+                                <h5><i class="fas fa-puzzle-piece text-primary me-2"></i>Modularidad</h5>
+                                <p class="mb-0 small">El sistema se divide en servicios independientes</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="principle-card">
+                                <h5><i class="fas fa-exchange-alt text-primary me-2"></i>Interoperabilidad</h5>
+                                <p class="mb-0 small">Comunicación entre diferentes lenguajes y plataformas</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="principle-card">
+                                <h5><i class="fas fa-recycle text-primary me-2"></i>Reutilización</h5>
+                                <p class="mb-0 small">Un servicio puede ser usado por múltiples aplicaciones</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="principle-card">
+                                <h5><i class="fas fa-unlink text-primary me-2"></i>Bajo Acoplamiento</h5>
+                                <p class="mb-0 small">Servicios independientes, fácil mantenimiento</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="principle-card">
+                                <h5><i class="fas fa-chart-line text-primary me-2"></i>Escalabilidad</h5>
+                                <p class="mb-0 small">Los servicios crecen según la demanda</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="principle-card">
+                                <h5><i class="fas fa-network-wired text-primary me-2"></i>Accesibilidad</h5>
+                                <p class="mb-0 small">Acceso mediante protocolos web estándar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3><i class="fas fa-code-branch me-2"></i>1.3 Aplicaciones Web Híbridas (Mashup)</h3>
+                    <p>Las aplicaciones <strong>Mashup</strong> combinan datos y servicios de múltiples fuentes para crear nuevas funcionalidades.</p>
+                    
+                    <h4>Características de los Mashup:</h4>
+                    <ul>
+                        <li>Integración de múltiples servicios web</li>
+                        <li>Uso de APIs públicas o privadas</li>
+                        <li>Desarrollo rápido y flexible</li>
+                        <li>Interfaz web interactiva</li>
+                        <li>Dependencia de servicios externos</li>
+                    </ul>
+                    <p class="text-muted"><em>Ejemplo: Una aplicación que combina mapas, datos climáticos y servicios de ubicación.</em></p>
+                </div>
+
+                <!-- Sección: SOA -->
+                <div class="content-section">
+                    <h2><i class="fas fa-project-diagram me-2"></i>2. Arquitectura Orientada a Servicios (SOA)</h2>
+                    
+                    <h3><i class="fas fa-info-circle me-2"></i>2.1 Definición de SOA</h3>
+                    <div class="highlight-box">
+                        <p class="mb-0">La <strong>Arquitectura Orientada a Servicios (SOA)</strong> es un estilo de arquitectura que organiza las funcionalidades en servicios independientes que se comunican mediante interfaces bien definidas.</p>
+                    </div>
+
+                    <h3><i class="fas fa-drafting-compass me-2"></i>2.2 Principios de Diseño en SOA</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="principle-card">
+                                <h5><i class="fas fa-file-contract text-secondary me-2"></i>Contrato de Servicio</h5>
+                                <p class="mb-0 small">Define claramente cómo usar el servicio</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="principle-card">
+                                <h5><i class="fas fa-unlink text-secondary me-2"></i>Bajo Acoplamiento</h5>
+                                <p class="mb-0 small">Mínima dependencia entre servicios</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="principle-card">
+                                <h5><i class="fas fa-compress text-secondary me-2"></i>Alta Cohesión</h5>
+                                <p class="mb-0 small">Cada servicio realiza una función específica</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="principle-card">
+                                <h5><i class="fas fa-recycle text-secondary me-2"></i>Reutilización</h5>
+                                <p class="mb-0 small">Diseñados para diferentes contextos</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="principle-card">
+                                <h5><i class="fas fa-user-shield text-secondary me-2"></i>Autonomía</h5>
+                                <p class="mb-0 small">Control propio de lógica y datos</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="principle-card">
+                                <h5><i class="fas fa-search text-secondary me-2"></i>Descubribilidad</h5>
+                                <p class="mb-0 small">Fácil localización e identificación</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="principle-card">
+                                <h5><i class="fas fa-handshake text-secondary me-2"></i>Interoperabilidad</h5>
+                                <p class="mb-0 small">Comunicación multiplataforma</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3><i class="fas fa-certificate me-2"></i>2.3 Estándares Relacionados con los Servicios</h3>
+                    
+                    <div class="mb-4">
+                        <span class="standard-badge">XML</span>
+                        <h4>eXtensible Markup Language</h4>
+                        <p>Lenguaje de marcado para estructurar y transportar datos. Legible por humanos y máquinas.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <span class="standard-badge">SOAP</span>
+                        <h4>Simple Object Access Protocol</h4>
+                        <p>Protocolo que define el intercambio de información estructurada usando XML. Orientado a servicios empresariales.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <span class="standard-badge">WSDL</span>
+                        <h4>Web Services Description Language</h4>
+                        <p>Lenguaje basado en XML que describe las funcionalidades de un servicio web y cómo acceder a él.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <span class="standard-badge">UDDI</span>
+                        <h4>Universal Description, Discovery and Integration</h4>
+                        <p>Estándar para registrar y descubrir servicios web. Funciona como directorio de servicios.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <span class="standard-badge">REST</span>
+                        <h4>Representational State Transfer</h4>
+                        <p>Estilo arquitectónico que usa métodos HTTP (GET, POST, PUT, DELETE). Ligero y ampliamente usado en APIs modernas.</p>
+                    </div>
+                </div>
+
+                <!-- Conclusión -->
+                <div class="content-section">
+                    <h2><i class="fas fa-flag-checkered me-2"></i>Conclusión</h2>
+                    <p>El paradigma de aplicaciones orientadas a servicios y la arquitectura SOA representan una forma moderna y eficiente de desarrollar sistemas distribuidos. Gracias al uso de servicios independientes, estándares de comunicación y tecnologías en la nube, es posible construir aplicaciones <strong>escalables, reutilizables e interoperables</strong> que se adaptan a las necesidades actuales del desarrollo de software.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-code me-2"></i>Los CMMP
+                    </h5>
+                    <p class="small">Equipo dedicado al desarrollo de aplicaciones web orientadas a servicios.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Información Académica</h5>
+                    <ul class="list-unstyled small">
+                        <li><i class="fas fa-university me-2"></i>Universidad Tecnológica</li>
+                        <li><i class="fas fa-book me-2"></i>App Web Orientada a Servicios</li>
+                        <li><i class="fas fa-users me-2"></i>DSMA</li>
+                        <li><i class="fas fa-calendar me-2"></i>2025</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Enlaces</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="footer-link"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="equipo.html" class="footer-link"><i class="fas fa-users fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center small">
+                <p class="mb-0">&copy; 2025 Los CMMP - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

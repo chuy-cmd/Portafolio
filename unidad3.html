@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 3 - Portafolio CMMP</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content-section {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        }
+        .saber-header {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px 15px 0 0;
+            margin-bottom: 0;
+        }
+        .framework-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .framework-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+        }
+        .framework-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .framework-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+        }
+        .framework-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0;
+        }
+        .info-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .process-step {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            transition: all 0.3s;
+        }
+        .process-step:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.1);
+        }
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .step-title {
+            margin-top: 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .feature-list li {
+            padding: 0.6rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #475569;
+        }
+        .feature-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-size: 0.9rem;
+        }
+        .code-example {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        .code-example code {
+            color: #a5f3fc;
+        }
+        .highlight {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #f59e0b;
+            margin: 1.5rem 0;
+        }
+        .api-type-badge {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .badge-rest {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            color: #1e40af;
+        }
+        .badge-soap {
+            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+            color: #9f1239;
+        }
+        .badge-graphql {
+            background: linear-gradient(135deg, #fce7f3 0%, #fae8ff 100%);
+            color: #86198f;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-code me-2"></i>
+                <span class="fw-bold">Portafolio CMMP</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="unidad1.html">
+                            <i class="fas fa-book me-1"></i>Unidad 1
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="unidad2.html">
+                            <i class="fas fa-plug me-1"></i>Unidad 2
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="unidad3.html">
+                            <i class="fas fa-cogs me-1"></i>Unidad 3
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle profile-link" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-users-cog"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="equipo.html">
+                                <i class="fas fa-users me-2"></i>Conoce al Equipo
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12">
+                <a href="index.html" class="btn btn-outline-primary mb-4">
+                    <i class="fas fa-arrow-left me-2"></i>Volver al Inicio
+                </a>
+
+                <!-- Header -->
+                <div class="saber-header">
+                    <h1 class="mb-0"><i class="fas fa-cogs me-3"></i>Unidad 3: Desarrollo de API</h1>
+                    <p class="lead mt-2 mb-0 opacity-90">Frameworks y Proceso de Desarrollo de APIs</p>
+                </div>
+
+                <!-- Section 1: Frameworks -->
+                <div class="content-section">
+                    <h2 style="color: var(--primary); border-left: 4px solid var(--primary); padding-left: 1rem; margin-bottom: 2rem;">
+                        <i class="fas fa-layer-group me-2"></i>1. Identificar Frameworks en el Desarrollo de Aplicaciones Orientadas a Servicios
+                    </h2>
+
+                    <div class="info-box">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">¿Qué es un Framework?</h3>
+                        <p>Un <strong>framework</strong> es un conjunto de herramientas, bibliotecas y estructuras de trabajo que facilitan el desarrollo de software. Proporciona una base predefinida que ayuda a los programadores a desarrollar aplicaciones más rápido, organizadas y seguras.</p>
+                        <p class="mb-0">En el desarrollo de aplicaciones orientadas a servicios (SOA), los frameworks ayudan a crear, administrar y conectar servicios que se comunican entre sí a través de redes o APIs.</p>
+                    </div>
+
+                    <div class="highlight">
+                        <h4 style="color: #92400e; margin-bottom: 1rem;"><i class="fas fa-star me-2"></i>Características de los Frameworks para SOA</h4>
+                        <ul class="feature-list">
+                            <li>Permiten crear servicios independientes</li>
+                            <li>Facilitan la comunicación entre aplicaciones</li>
+                            <li>Incluyen herramientas para seguridad, autenticación y manejo de datos</li>
+                            <li>Permiten el desarrollo de APIs REST o SOAP</li>
+                            <li>Mejoran la organización y mantenimiento del código</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="color: var(--secondary); margin-top: 3rem; margin-bottom: 2rem;">
+                        <i class="fas fa-code me-2"></i>Ejemplos de Frameworks Utilizados
+                    </h3>
+
+                    <!-- Spring Boot -->
+                    <div class="framework-card">
+                        <div class="framework-header">
+                            <div class="framework-icon">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <div>
+                                <h3 class="framework-title">Spring Boot</h3>
+                                <p class="text-muted mb-0">Framework para Java</p>
+                            </div>
+                        </div>
+                        <p>Es uno de los frameworks más utilizados para desarrollar aplicaciones basadas en servicios con Java.</p>
+                        <h5 style="color: var(--primary); margin-top: 1rem;">Características:</h5>
+                        <ul class="feature-list">
+                            <li>Facilita la creación de APIs REST</li>
+                            <li>Integración con bases de datos</li>
+                            <li>Configuración automática</li>
+                            <li>Muy usado para microservicios</li>
+                        </ul>
+                    </div>
+
+                    <!-- Express.js -->
+                    <div class="framework-card">
+                        <div class="framework-header">
+                            <div class="framework-icon">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <div>
+                                <h3 class="framework-title">Express.js</h3>
+                                <p class="text-muted mb-0">Framework para Node.js</p>
+                            </div>
+                        </div>
+                        <p>Es un framework ligero de Node.js que permite crear servidores web y APIs.</p>
+                        <h5 style="color: var(--primary); margin-top: 1rem;">Características:</h5>
+                        <ul class="feature-list">
+                            <li>Fácil de usar</li>
+                            <li>Ideal para aplicaciones web y APIs</li>
+                            <li>Permite manejar rutas y peticiones HTTP</li>
+                        </ul>
+                    </div>
+
+                    <!-- Django -->
+                    <div class="framework-card">
+                        <div class="framework-header">
+                            <div class="framework-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div>
+                                <h3 class="framework-title">Django</h3>
+                                <p class="text-muted mb-0">Framework para Python</p>
+                            </div>
+                        </div>
+                        <p>Framework desarrollado en Python que permite crear aplicaciones web y servicios.</p>
+                        <h5 style="color: var(--primary); margin-top: 1rem;">Características:</h5>
+                        <ul class="feature-list">
+                            <li>Seguridad integrada</li>
+                            <li>Manejo automático de base de datos</li>
+                            <li>Arquitectura MVC</li>
+                        </ul>
+                    </div>
+
+                    <!-- Laravel -->
+                    <div class="framework-card">
+                        <div class="framework-header">
+                            <div class="framework-icon">
+                                <i class="fab fa-php"></i>
+                            </div>
+                            <div>
+                                <h3 class="framework-title">Laravel</h3>
+                                <p class="text-muted mb-0">Framework para PHP</p>
+                            </div>
+                        </div>
+                        <p>Framework de PHP muy popular para aplicaciones web y APIs.</p>
+                        <h5 style="color: var(--primary); margin-top: 1rem;">Características:</h5>
+                        <ul class="feature-list">
+                            <li>Sintaxis sencilla</li>
+                            <li>Sistema de rutas para APIs</li>
+                            <li>Seguridad integrada</li>
+                            <li>ORM para bases de datos</li>
+                        </ul>
+                    </div>
+
+                    <!-- ASP.NET Core -->
+                    <div class="framework-card">
+                        <div class="framework-header">
+                            <div class="framework-icon">
+                                <i class="fas fa-window-maximize"></i>
+                            </div>
+                            <div>
+                                <h3 class="framework-title">ASP.NET Core</h3>
+                                <p class="text-muted mb-0">Framework de Microsoft</p>
+                            </div>
+                        </div>
+                        <p>Framework desarrollado por Microsoft para aplicaciones web y servicios.</p>
+                        <h5 style="color: var(--primary); margin-top: 1rem;">Características:</h5>
+                        <ul class="feature-list">
+                            <li>Alto rendimiento</li>
+                            <li>Permite crear APIs REST</li>
+                            <li>Integración con servicios de Microsoft</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight">
+                        <h4 style="color: #92400e; margin-bottom: 1rem;"><i class="fas fa-lightbulb me-2"></i>Importancia de los Frameworks</h4>
+                        <p class="mb-0">Los frameworks son importantes porque:</p>
+                        <ul class="feature-list mt-2">
+                            <li>Reducen el tiempo de desarrollo</li>
+                            <li>Mejoran la organización del código</li>
+                            <li>Permiten reutilizar componentes</li>
+                            <li>Facilitan el mantenimiento y escalabilidad de las aplicaciones</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 2: API Development Process -->
+                <div class="content-section">
+                    <h2 style="color: var(--primary); border-left: 4px solid var(--primary); padding-left: 1rem; margin-bottom: 2rem;">
+                        <i class="fas fa-project-diagram me-2"></i>2. Identificar el Proceso de Desarrollo de Programación de Aplicaciones (API)
+                    </h2>
+
+                    <div class="info-box">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">¿Qué es una API?</h3>
+                        <p>Una <strong>API</strong> (Application Programming Interface) es un conjunto de reglas y protocolos que permiten que diferentes aplicaciones se comuniquen entre sí.</p>
+                        <p class="mb-0">Las APIs permiten que un sistema pueda solicitar información o servicios de otro sistema, como por ejemplo cuando una aplicación obtiene datos de un servidor o una base de datos.</p>
+                        <div class="mt-3 p-3 bg-white rounded">
+                            <strong>Ejemplo:</strong> Una aplicación del clima usa una API para obtener información meteorológica de un servidor.
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--secondary); margin-top: 3rem; margin-bottom: 2rem;">
+                        <i class="fas fa-code-branch me-2"></i>Tipos de API
+                    </h3>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-4">
+                            <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1.5rem; border-radius: 12px; height: 100%;">
+                                <h4 style="color: #1e40af;"><i class="fas fa-exchange-alt me-2"></i>API REST</h4>
+                                <p class="mb-0">Utiliza el protocolo HTTP para enviar y recibir información. Es el tipo de API más utilizado actualmente.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div style="background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); padding: 1.5rem; border-radius: 12px; height: 100%;">
+                                <h4 style="color: #9f1239;"><i class="fas fa-file-code me-2"></i>API SOAP</h4>
+                                <p class="mb-0">Protocolo más estructurado que utiliza XML para intercambiar información entre sistemas.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div style="background: linear-gradient(135deg, #fae8ff 0%, #f3e8ff 100%); padding: 1.5rem; border-radius: 12px; height: 100%;">
+                                <h4 style="color: #86198f;"><i class="fas fa-database me-2"></i>API GraphQL</h4>
+                                <p class="mb-0">Permite solicitar exactamente los datos necesarios, evitando enviar información innecesaria.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--secondary); margin-top: 3rem; margin-bottom: 2rem;">
+                        <i class="fas fa-tasks me-2"></i>Proceso de Desarrollo de una API
+                    </h3>
+
+                    <!-- Step 1 -->
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h4 class="step-title">Análisis de Requerimientos</h4>
+                        <p>Se identifican las necesidades del sistema y qué información o servicios se van a ofrecer mediante la API.</p>
+                        <div class="code-example">
+<strong>Ejemplo de requerimientos:</strong>
+• Consultar usuarios
+• Registrar datos
+• Actualizar información
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h4 class="step-title">Diseño de la API</h4>
+                        <p>Se definen los endpoints, métodos HTTP y estructura de los datos.</p>
+                        <div class="code-example">
+<strong>Ejemplo de endpoints:</strong>
+<code>GET</code>    /usuarios        → obtener usuarios
+<code>POST</code>   /usuarios        → crear usuario
+<code>PUT</code>    /usuarios/{id}   → actualizar usuario
+<code>DELETE</code> /usuarios/{id}   → eliminar usuario
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h4 class="step-title">Implementación</h4>
+                        <p>Se desarrolla el código de la API utilizando un lenguaje y framework.</p>
+                        <h5 style="color: var(--primary); margin-top: 1rem;">Ejemplo de tecnologías:</h5>
+                        <ul class="feature-list">
+                            <li>Node.js con Express</li>
+                            <li>Python con Django</li>
+                            <li>Java con Spring Boot</li>
+                            <li>PHP con Laravel</li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h4 class="step-title">Pruebas de la API</h4>
+                        <p>Se realizan pruebas para verificar que la API funcione correctamente.</p>
+                        <h5 style="color: var(--primary); margin-top: 1rem;">Herramientas utilizadas:</h5>
+                        <div class="row g-2 mb-3">
+                            <div class="col-md-4">
+                                <span class="api-type-badge badge-rest w-100">Postman</span>
+                            </div>
+                            <div class="col-md-4">
+                                <span class="api-type-badge badge-soap w-100">Insomnia</span>
+                            </div>
+                            <div class="col-md-4">
+                                <span class="api-type-badge badge-graphql w-100">Swagger</span>
+                            </div>
+                        </div>
+                        <h5 style="color: var(--primary);">Se verifican:</h5>
+                        <ul class="feature-list">
+                            <li>Respuestas correctas</li>
+                            <li>Manejo de errores</li>
+                            <li>Seguridad</li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h4 class="step-title">Documentación</h4>
+                        <p>Se crea documentación para que otros desarrolladores puedan utilizar la API.</p>
+                        <h5 style="color: var(--primary); margin-top: 1rem;">La documentación incluye:</h5>
+                        <ul class="feature-list">
+                            <li>Endpoints disponibles</li>
+                            <li>Parámetros requeridos</li>
+                            <li>Ejemplos de respuesta</li>
+                            <li>Métodos HTTP permitidos</li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <h4 class="step-title">Implementación y Mantenimiento</h4>
+                        <p>La API se publica en un servidor para que otras aplicaciones puedan utilizarla.</p>
+                        <p class="mb-0">Posteriormente se realizan actualizaciones, mejoras y corrección de errores.</p>
+                    </div>
+
+                    <div class="highlight mt-4">
+                        <h4 style="color: #92400e; margin-bottom: 1rem;"><i class="fas fa-trophy me-2"></i>Importancia de las APIs</h4>
+                        <p class="mb-0">Las APIs son fundamentales en el desarrollo de software porque:</p>
+                        <ul class="feature-list mt-2">
+                            <li>Permiten la integración entre sistemas</li>
+                            <li>Facilitan el desarrollo de aplicaciones web y móviles</li>
+                            <li>Permiten reutilizar servicios</li>
+                            <li>Mejoran la interoperabilidad entre plataformas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-code me-2"></i>Los CMMP
+                    </h5>
+                    <p class="small">Equipo dedicado al desarrollo de aplicaciones web orientadas a servicios.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Información Académica</h5>
+                    <ul class="list-unstyled small">
+                        <li><i class="fas fa-university me-2"></i>Universidad Tecnológica</li>
+                        <li><i class="fas fa-book me-2"></i>App Web Orientada a Servicios</li>
+                        <li><i class="fas fa-users me-2"></i>DSMA</li>
+                        <li><i class="fas fa-calendar me-2"></i>2025</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Enlaces</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="footer-link"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="equipo.html" class="footer-link"><i class="fas fa-users fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center small">
+                <p class="mb-0">&copy; 2025 Los CMMP - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

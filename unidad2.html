@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 2 - Portafolio CMMP</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content-section {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        }
+        .content-section h2 {
+            color: var(--primary);
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .content-section h3 {
+            color: var(--secondary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .content-section h4 {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+        }
+        .saber-header {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px 15px 0 0;
+            margin-bottom: 0;
+        }
+        .topic-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .topic-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+        }
+        .topic-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        .topic-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        .topic-description {
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .info-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .info-box h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .feature-list li {
+            padding: 0.6rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #475569;
+        }
+        .feature-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-size: 0.9rem;
+        }
+        .badge-custom {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin: 0.25rem;
+        }
+        .badge-primary {
+            background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%);
+            color: #6d28d9;
+        }
+        .badge-success {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            color: #065f46;
+        }
+        .badge-info {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            color: #1e40af;
+        }
+        .badge-warning {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            color: #92400e;
+        }
+        .advantages-disadvantages {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .advantages-disadvantages {
+                grid-template-columns: 1fr;
+            }
+        }
+        .adv-box {
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+        .adv-box.positive {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border: 2px solid #10b981;
+        }
+        .adv-box.negative {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border: 2px solid #ef4444;
+        }
+        .adv-box h5 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .adv-box.positive h5 {
+            color: #065f46;
+        }
+        .adv-box.negative h5 {
+            color: #991b1b;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-code me-2"></i>
+                <span class="fw-bold">Portafolio CMMP</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="unidad1.html">
+                            <i class="fas fa-book me-1"></i>Unidad 1
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="unidad2.html">
+                            <i class="fas fa-plug me-1"></i>Unidad 2
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="unidad3.html">
+                            <i class="fas fa-cogs me-1"></i>Unidad 3
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle profile-link" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-users-cog"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="equipo.html">
+                                <i class="fas fa-users me-2"></i>Conoce al Equipo
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12">
+                <a href="index.html" class="btn btn-outline-primary mb-4">
+                    <i class="fas fa-arrow-left me-2"></i>Volver al Inicio
+                </a>
+
+                <!-- Header -->
+                <div class="saber-header">
+                    <h1 class="mb-0"><i class="fas fa-plug me-3"></i>Unidad 2: Implementación de API</h1>
+                    <p class="lead mt-2 mb-0 opacity-90">Tecnologías y Plataformas Digitales Modernas</p>
+                </div>
+
+                <!-- Topic 1: Geolocalización -->
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h2 class="topic-title">1. Geolocalización</h2>
+                    <p class="topic-description">
+                        La geolocalización es la tecnología que permite identificar la ubicación geográfica de una persona, dispositivo u objeto en tiempo real o aproximado, usando coordenadas como latitud y longitud.
+                    </p>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-cogs me-2"></i>Cómo funciona</h4>
+                        <ul class="feature-list">
+                            <li><strong>GPS:</strong> Satélites que determinan la posición exacta.</li>
+                            <li><strong>Redes móviles:</strong> Antenas telefónicas.</li>
+                            <li><strong>Wi-Fi:</strong> Ubicación aproximada según redes cercanas.</li>
+                            <li><strong>Dirección IP:</strong> Localización general por conexión a internet.</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-mobile-alt me-2"></i>Aplicaciones</h4>
+                        <ul class="feature-list">
+                            <li>Mapas y navegación (Google Maps, Waze)</li>
+                            <li>Servicios de transporte (Uber, Didi)</li>
+                            <li>Publicidad personalizada</li>
+                            <li>Seguridad y rastreo de dispositivos</li>
+                        </ul>
+                    </div>
+
+                    <div class="advantages-disadvantages">
+                        <div class="adv-box positive">
+                            <h5><i class="fas fa-thumbs-up me-2"></i>Ventajas</h5>
+                            <ul class="feature-list">
+                                <li>Precisión en ubicaciones</li>
+                                <li>Mejora servicios personalizados</li>
+                                <li>Optimiza logística y transporte</li>
+                            </ul>
+                        </div>
+                        <div class="adv-box negative">
+                            <h5><i class="fas fa-exclamation-triangle me-2"></i>Desventajas</h5>
+                            <ul class="feature-list">
+                                <li>Riesgos a la privacidad</li>
+                                <li>Dependencia de conexión o señal</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 2: Redes Sociales -->
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h2 class="topic-title">2. Redes Sociales</h2>
+                    <p class="topic-description">
+                        Las redes sociales son plataformas digitales que permiten a las personas interactuar, compartir contenido y comunicarse en línea.
+                    </p>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-list-check me-2"></i>Características</h4>
+                        <ul class="feature-list">
+                            <li>Creación de perfiles personales o empresariales</li>
+                            <li>Interacción mediante mensajes, comentarios y reacciones</li>
+                            <li>Compartir fotos, videos y publicaciones</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-3">
+                        <h4 class="mb-3"><i class="fas fa-star me-2"></i>Ejemplos Populares</h4>
+                        <span class="badge-custom badge-primary">Facebook</span>
+                        <span class="badge-custom badge-primary">Instagram</span>
+                        <span class="badge-custom badge-primary">X (Twitter)</span>
+                        <span class="badge-custom badge-primary">TikTok</span>
+                        <span class="badge-custom badge-primary">LinkedIn</span>
+                    </div>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-bullseye me-2"></i>Usos</h4>
+                        <ul class="feature-list">
+                            <li>Comunicación personal</li>
+                            <li>Marketing digital</li>
+                            <li>Educación y difusión de información</li>
+                            <li>Entretenimiento</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-chart-line me-2"></i>Impacto</h4>
+                        <ul class="feature-list">
+                            <li>Conectan personas a nivel global</li>
+                            <li>Influyen en opiniones y tendencias</li>
+                            <li>Generan comunidades virtuales</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Topic 3: Bases de Datos -->
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h2 class="topic-title">3. Bases de Datos</h2>
+                    <p class="topic-description">
+                        Una base de datos es un conjunto organizado de datos que se almacenan y administran de forma electrónica para facilitar su acceso y manipulación.
+                    </p>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <h4><i class="fas fa-table me-2"></i>Relacionales</h4>
+                                <span class="badge-custom badge-success">MySQL</span>
+                                <span class="badge-custom badge-success">MariaDB</span>
+                                <span class="badge-custom badge-success">PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <h4><i class="fas fa-code-branch me-2"></i>No Relacionales</h4>
+                                <span class="badge-custom badge-info">MongoDB</span>
+                                <span class="badge-custom badge-info">Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-puzzle-piece me-2"></i>Componentes</h4>
+                        <div class="row g-2">
+                            <div class="col-md-3 col-6">
+                                <span class="badge-custom badge-warning w-100">Tablas</span>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <span class="badge-custom badge-warning w-100">Registros</span>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <span class="badge-custom badge-warning w-100">Campos</span>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <span class="badge-custom badge-warning w-100">Llaves</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-briefcase me-2"></i>Usos</h4>
+                        <ul class="feature-list">
+                            <li>Sistemas escolares</li>
+                            <li>Bancos y empresas</li>
+                            <li>Redes sociales</li>
+                            <li>Aplicaciones web y móviles</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-check-circle me-2"></i>Ventajas</h4>
+                        <ul class="feature-list">
+                            <li>Organización eficiente</li>
+                            <li>Seguridad de la información</li>
+                            <li>Acceso rápido a grandes volúmenes de datos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Topic 4: Plataformas Online -->
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h2 class="topic-title">4. Plataformas On-Line</h2>
+                    <p class="topic-description">
+                        Las plataformas on-line son sistemas digitales accesibles desde internet que permiten realizar diversas actividades sin necesidad de instalación local.
+                    </p>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-star me-2"></i>Características</h4>
+                        <ul class="feature-list">
+                            <li>Acceso desde cualquier dispositivo</li>
+                            <li>Funcionan en la nube</li>
+                            <li>Actualizaciones automáticas</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-3">
+                        <h4 class="mb-3"><i class="fas fa-laptop me-2"></i>Ejemplos</h4>
+                        <span class="badge-custom badge-primary">Google Classroom</span>
+                        <span class="badge-custom badge-primary">Canva</span>
+                        <span class="badge-custom badge-primary">Moodle</span>
+                        <span class="badge-custom badge-primary">Amazon</span>
+                        <span class="badge-custom badge-primary">Mercado Libre</span>
+                    </div>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-tasks me-2"></i>Usos</h4>
+                        <ul class="feature-list">
+                            <li>Educación a distancia</li>
+                            <li>Comercio electrónico</li>
+                            <li>Trabajo colaborativo</li>
+                            <li>Gestión empresarial</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-rocket me-2"></i>Ventajas</h4>
+                        <ul class="feature-list">
+                            <li>Flexibilidad</li>
+                            <li>Ahorro de costos</li>
+                            <li>Acceso remoto</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Topic 5: Plataformas Streaming -->
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <h2 class="topic-title">5. Plataformas Streaming</h2>
+                    <p class="topic-description">
+                        Las plataformas de streaming permiten transmitir contenido multimedia (audio y video) en tiempo real o bajo demanda a través de internet.
+                    </p>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <h4><i class="fas fa-video me-2"></i>Video</h4>
+                                <span class="badge-custom badge-success">Netflix</span>
+                                <span class="badge-custom badge-success">YouTube</span>
+                                <span class="badge-custom badge-success">Prime Video</span>
+                                <span class="badge-custom badge-success">Disney+</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <h4><i class="fas fa-music me-2"></i>Música</h4>
+                                <span class="badge-custom badge-info">Spotify</span>
+                                <span class="badge-custom badge-info">Apple Music</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-sliders-h me-2"></i>Características</h4>
+                        <ul class="feature-list">
+                            <li>No requiere descarga completa</li>
+                            <li>Contenido bajo demanda</li>
+                            <li>Acceso multiplataforma</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-hands-helping me-2"></i>Usos</h4>
+                        <ul class="feature-list">
+                            <li>Entretenimiento</li>
+                            <li>Educación</li>
+                            <li>Transmisiones en vivo</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-trophy me-2"></i>Ventajas</h4>
+                        <ul class="feature-list">
+                            <li>Disponibilidad inmediata</li>
+                            <li>Gran variedad de contenido</li>
+                            <li>Personalización según gustos</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="fas fa-code me-2"></i>Los CMMP
+                    </h5>
+                    <p class="small">Equipo dedicado al desarrollo de aplicaciones web orientadas a servicios.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Información Académica</h5>
+                    <ul class="list-unstyled small">
+                        <li><i class="fas fa-university me-2"></i>Universidad Tecnológica</li>
+                        <li><i class="fas fa-book me-2"></i>App Web Orientada a Servicios</li>
+                        <li><i class="fas fa-users me-2"></i>DSMA</li>
+                        <li><i class="fas fa-calendar me-2"></i>2025</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Enlaces</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="footer-link"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="equipo.html" class="footer-link"><i class="fas fa-users fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center small">
+                <p class="mb-0">&copy; 2025 Los CMMP - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
